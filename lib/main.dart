@@ -16,14 +16,16 @@ class FlashChat extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.black54),
         ),
       ),
-      initialRoute: '/',
+
+      // add below line to beginning of screen:     class WelcomeScreen extends StatefulWidget {
+      //   static String id = 'welcome_screen';  //ad in screen navigation main.dart routes
+      initialRoute:  LoginScreen.id,
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => WelcomeScreen(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
-        '/chat': (context) =>  ChatScreen(),
-        '/login': (context) =>  LoginScreen(),
-        '/reg': (context) =>  RegistrationScreen(),
+        WelcomeScreen.id: (context) => LoginScreen(),
+        ChatScreen.id: (context) =>  ChatScreen(),
+        LoginScreen.id: (context) =>  LoginScreen(),
+        RegistrationScreen.id: (context) =>  RegistrationScreen(),
       },
     );
   }

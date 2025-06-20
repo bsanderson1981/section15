@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  static String id = 'login_screen';  //ad in screen navigation main.dart routes
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }

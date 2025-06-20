@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {
+  static String id = 'registration_screen';  //ad in screen navigation main.dart routes
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }

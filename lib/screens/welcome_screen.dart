@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static String id = 'welcome_screen';  //ad in screen navigation main.dart routes
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }

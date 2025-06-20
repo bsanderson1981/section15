@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:section15/constants.dart';
 
 class ChatScreen extends StatefulWidget {
+  static String id = 'chat_screen';   //ad in screen navigation main.dart routes
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
