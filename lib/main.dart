@@ -19,10 +19,10 @@ class FlashChat extends StatelessWidget {
 
       // add below line to beginning of screen:     class WelcomeScreen extends StatefulWidget {
       //   static String id = 'welcome_screen';  //ad in screen navigation main.dart routes
-      initialRoute:  LoginScreen.id,
+      initialRoute:  WelcomeScreen.id,
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        WelcomeScreen.id: (context) => LoginScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
         ChatScreen.id: (context) =>  ChatScreen(),
         LoginScreen.id: (context) =>  LoginScreen(),
         RegistrationScreen.id: (context) =>  RegistrationScreen(),
