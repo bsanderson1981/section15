@@ -1,6 +1,8 @@
+
+//import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:section15/screens/registration_screen.dart';
-
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -9,11 +11,53 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin { //mix in needed for vsync
+
+ //animate start
+  late AnimationController controller;
+  late Animation animation;
+  @override  // need state to change animation
+  void initState(){
+    super.initState();
+
+   controller =  AnimationController(  //constructor
+     duration: Duration(seconds: 1),
+      vsync: this, upperBound: 1.0
+   );
+/*    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);*/
+      animation = ColorTween(begin: Colors.blue, end: Colors.white).animate(controller);
+      controller.forward();
+     /* animation.addStatusListener((status){
+        if (status == AnimationStatus.completed){
+          controller.reverse(from: 1.0);
+        } else if (status == AnimationStatus.dismissed){
+          controller.forward();
+        }
+
+        print(status);
+      });*/
+
+      controller.addListener((){
+        setState(() {
+        // this setState is required to animate the red color shift
+        // backgroundColor: Colors.red.withAlpha((controller.value * 255).toInt()),
+          // in section 15 lesson 174
+        });
+        print(animation.value);
+      }
+      );
+  }
+  // dispose of animation controller to not allow to
+  //run forever when not needed
   @override
+  void dispose(){
+    super.dispose();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
+      //backgroundColor: Colors.red.withAlpha((controller.value * 255).toInt()),
+      //withOpacity is depricated
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -26,10 +70,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    height: 60, // need *100 to see curve
                   ),
                 ),
                 Text(
+                  // had to add * 100 to get correct number count up 1 100%
+                  //'${(controller.value * 100).toInt()}%',
                   'Flash Chat',
                   style: TextStyle(
                     fontSize: 45.0,
