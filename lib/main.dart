@@ -7,15 +7,13 @@ import 'package:section15/screens/chat_screen.dart';
 void main() => runApp(FlashChat());
 
 class FlashChat extends StatelessWidget {
+  const FlashChat({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          bodyMedium: TextStyle(color: Colors.black54),
-        ),
-      ),
+
 
       // add below line to beginning of screen:     class WelcomeScreen extends StatefulWidget {
       //   static String id = 'welcome_screen';  //ad in screen navigation main.dart routes

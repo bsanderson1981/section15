@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:section15/screens/registration_screen.dart';
 //import 'package:section15/screens/login_screen.dart';
 class RoundedButton extends StatelessWidget {
-  RoundedButton({required this.title,  required this.color, required this.onPressed,});
+  const RoundedButton({required this.title,  required this.color, required this.onPressed,});
 
   final String title;
   final VoidCallback onPressed;
@@ -25,6 +25,7 @@ class RoundedButton extends StatelessWidget {
           child: Text(
             title,
               style: TextStyle(
+                color: Colors.white,
                //color: Colors.white ,
               ),
 
