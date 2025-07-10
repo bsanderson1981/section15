@@ -1,3 +1,4 @@
+//version before test java 11 SDK use update
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -27,10 +28,16 @@ android {
         applicationId = "com.example.section15"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+
+       /* minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        versionName = flutter.versionName*/
+
+        minSdk = 23
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
