@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    # install firebase packages needed for firebase use
   firebase_core: ^2.15.1
   cupertino_icons: ^1.0.8
   cloud_firestore: ^4.17.5
