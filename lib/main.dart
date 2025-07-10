@@ -6,7 +6,9 @@ import 'package:section15/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
-
+//app runs successfully with firebase packages added.
+//save at this point. before start add in firebase auth and storage
+//functions.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
