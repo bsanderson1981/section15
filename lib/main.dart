@@ -5,7 +5,7 @@ import 'package:section15/screens//registration_screen.dart';
 import 'package:section15/screens/chat_screen.dart';
 
 void main() => runApp(FlashChat());
-
+//tes4
 class FlashChat extends StatelessWidget {
   const FlashChat({super.key});
 
