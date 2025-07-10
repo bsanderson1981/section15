@@ -3,8 +3,22 @@ import 'package:section15/screens/welcome_screen.dart';
 import 'package:section15/screens/login_screen.dart';
 import 'package:section15/screens//registration_screen.dart';
 import 'package:section15/screens/chat_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(FlashChat());
+
+/*void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();// not ensureInigizlied
+  runApp(FlashChat());
+}*/
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+ // print('✅ Firebase initialized');
+  runApp(FlashChat());
+}
+
+
 //tes4
 class FlashChat extends StatelessWidget {
   const FlashChat({super.key});
