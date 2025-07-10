@@ -6,21 +6,14 @@ import 'package:section15/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
-/*void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();// not ensureInigizlied
-  runApp(FlashChat());
-}*/
-//test4
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
  print('✅ Firebase initialized');
   runApp(FlashChat());
 }
-//test
 
-//tes4
 class FlashChat extends StatelessWidget {
   const FlashChat({super.key});
 
