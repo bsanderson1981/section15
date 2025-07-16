@@ -1,7 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:section15/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class ChatScreen extends StatefulWidget {
   static String id = 'chat_screen';   //ad in screen navigation main.dart routes
@@ -10,7 +13,10 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
+  final _firestore = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
+ late String  messageText;
   User? loggedInUser; //was FirebaseUser depricaated V1 firebase
 
   @override
@@ -61,14 +67,17 @@ class _ChatScreenState extends State<ChatScreen> {
                   Expanded(
                     child: TextField(
                       onChanged: (value) {
-                        //Do something with the user input.
+                        messageText = value;
                       },
                       decoration: kMessageTextFieldDecoration,
                     ),
                   ),
                   TextButton(
                     onPressed: () {
-                      //Implement send functionality.
+                       _firestore.collection('messages').add({
+                         'text': messageText,
+                         'sender': loggedInUser?.email,
+                       });
                     },
                     child: Text(
                       'Send',
