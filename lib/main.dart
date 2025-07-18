@@ -5,7 +5,7 @@ import 'package:section15/screens//registration_screen.dart';
 import 'package:section15/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
+// finished section 15 #187
 //app runs successfully with firebase packages added.
 //save at this point. before start add in firebase auth and storage
 //functions.
