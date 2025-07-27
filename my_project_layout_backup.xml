@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="626e8972-e5ff-4556-81ba-cb2a8d70e79d" name="Changes" comment="finish section 15 #188  added stream listener code">
+      <change beforePath="$PROJECT_DIR$/lib/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/chat_screen.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bsanderson1981&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bsanderson1981/section15.git&quot;,
+    &quot;accountId&quot;: &quot;9323e04f-0559-4854-af42-be07b4224d74&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="30I2roIdVSu7j6HmaVxIbxLNlbT" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <option name="show-excluded-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bsanderson/StudioProjects/section15/android/app&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android/app" />
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="test new git">
+      <option name="closed" value="true" />
+      <created>1752119187931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752119187931</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added firebase plugins and config files">
+      <option name="closed" value="true" />
+      <created>1752120235663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752120235663</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fire base installed and init ok.  import firbase code base in main.dart">
+      <option name="closed" value="true" />
+      <created>1752160483027</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752160483027</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fire base installed and init ok.  import firbase code base in main.dart">
+      <option name="closed" value="true" />
+      <created>1752161190712</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752161190712</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test push from M1 laptop">
+      <option name="closed" value="true" />
+      <created>1752161498215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752161498215</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removed commented old code at start of main.dart">
+      <option name="closed" value="true" />
+      <created>1752161762485</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752161762485</updated>
+    </task>
+    <task id="LOCAL-00007" summary="working app/build.grade.kts before trying java 11 fix to silene warning">
+      <option name="closed" value="true" />
+      <created>1752162475872</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752162475872</updated>
+    </task>
+    <task id="LOCAL-00008" summary="java sdk 11 usage clear red warnings in this app/build.gradel.kts update">
+      <option name="closed" value="true" />
+      <created>1752162602722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752162602722</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated pubspce.yml to install needed firebae packages .&#10;  firebase_core: ^2.15.1&#10;  cupertino_icons: ^1.0.8&#10;  cloud_firestore: ^4.17.5&#10;  firebase_storage: ^11.6.5&#10;  firebase_auth: ^4.20.0">
+      <option name="closed" value="true" />
+      <created>1752162694428</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752162694428</updated>
+    </task>
+    <task id="LOCAL-00010" summary="firebase packages added and andorid app runs no errors. this saved before adding auth and r/w features to firebase">
+      <option name="closed" value="true" />
+      <created>1752163363249</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752163363249</updated>
+    </task>
+    <task id="LOCAL-00011" summary="finished section 15 #183  firebase install and based user create email pwd auth.">
+      <option name="closed" value="true" />
+      <created>1752167457801</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752167457801</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finished section 15 #184  firebase login and logout">
+      <option name="closed" value="true" />
+      <created>1752428386950</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752428386950</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finished section 15 #184  firebase login and logout">
+      <option name="closed" value="true" />
+      <created>1752428424057</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752428424057</updated>
+    </task>
+    <task id="LOCAL-00014" summary="start  section 15 #185 firebase upgrade flutter and install model_progress clas">
+      <option name="closed" value="true" />
+      <created>1752602105535</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752602105535</updated>
+    </task>
+    <task id="LOCAL-00015" summary="start  section 15 #185 firebase upgrade flutter and install model_progress class">
+      <option name="closed" value="true" />
+      <created>1752602138443</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752602138443</updated>
+    </task>
+    <task id="LOCAL-00016" summary="finish section 15 #185  spinner on login and register action">
+      <option name="closed" value="true" />
+      <created>1752603619523</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752603619523</updated>
+    </task>
+    <task id="LOCAL-00017" summary="finish section 15 #186  write chat message to firebase store">
+      <option name="closed" value="true" />
+      <created>1752683708907</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752683708907</updated>
+    </task>
+    <task id="LOCAL-00018" summary="finish section 15 #187">
+      <option name="closed" value="true" />
+      <created>1752861274873</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752861274873</updated>
+    </task>
+    <task id="LOCAL-00019" summary="finish section 15 #188  added stream listener code">
+      <option name="closed" value="true" />
+      <created>1752863418064</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1752863418064</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="626e8972-e5ff-4556-81ba-cb2a8d70e79d" name="Changes" comment="finish section 15 #188  added stream listener code" />
+      <created>1753300968747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753300968747</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test new git" />
+    <MESSAGE value="added firebase plugins and config files" />
+    <MESSAGE value="fire base installed and init ok.  import firbase code base in main.dart" />
+    <MESSAGE value="test push from M1 laptop" />
+    <MESSAGE value="removed commented old code at start of main.dart" />
+    <MESSAGE value="working app/build.grade.kts before trying java 11 fix to silene warning" />
+    <MESSAGE value="java sdk 11 usage clear red warnings in this app/build.gradel.kts update" />
+    <MESSAGE value="updated pubspce.yml to install needed firebae packages .&#10;  firebase_core: ^2.15.1&#10;  cupertino_icons: ^1.0.8&#10;  cloud_firestore: ^4.17.5&#10;  firebase_storage: ^11.6.5&#10;  firebase_auth: ^4.20.0" />
+    <MESSAGE value="firebase packages added and andorid app runs no errors. this saved before adding auth and r/w features to firebase" />
+    <MESSAGE value="finished section 15 #183  firebase install and based user create email pwd auth." />
+    <MESSAGE value="finished section 15 #184  firebase login and logout" />
+    <MESSAGE value="start  section 15 #185 firebase upgrade flutter and install model_progress clas" />
+    <MESSAGE value="start  section 15 #185 firebase upgrade flutter and install model_progress class" />
+    <MESSAGE value="finish section 15 #185  spinner on login and register action" />
+    <MESSAGE value="finish section 15 #186  write chat message to firebase store" />
+    <MESSAGE value="finish section 15 #187" />
+    <MESSAGE value="finish section 15 #188  added stream listener code" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish section 15 #188  added stream listener code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/screens/registration_screen.dart</url>
+          <line>68</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
