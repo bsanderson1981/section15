@@ -13,6 +13,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final messageTextController = TextEditingController();
 
   final _firestore = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
@@ -82,29 +83,45 @@ class _ChatScreenState extends State<ChatScreen> {
 
                 return Expanded(
                   child: ListView.builder(
-                    padding:  EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
                       final msg = messages[index].data() as Map<String, dynamic>;
-                      return  Expanded(
-                        child: Material(
-                          borderRadius:  BorderRadius.circular(12),
-                         // color: Colors.lightBlueAccent,
 
-                          child: ListTile(
-                            title: Text(msg['sender'] ?? 'Unknown Sender',
-                            style: const TextStyle(
-                              fontSize: 14,),),     // Sender name
-                            subtitle: Container(
-                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                                decoration: BoxDecoration(
-                                  color: Colors.lightBlueAccent,
-                                  borderRadius: BorderRadius.circular(16),
+                      return Align(
+                        alignment: Alignment.centerRight, // 👈 Right-justify whole bubble
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(vertical: 6), // space between bubbles
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end, // 👈 Right-align sender + message
+                              children: [
+                                Text(
+                                  msg['sender'] ?? 'Unknown Sender',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
-                                child: Text(msg['text'] ?? '',
-                                style: const TextStyle(color:  Colors.white,
-                                fontSize:  16,
-                                ),),
+                                const SizedBox(height: 4),
+                                Material(
+                                  elevation: 6.0, // 👈 adds the shadow
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Colors.lightBlue, // 👈 background color of bubble
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                    child: Text(
+                                      msg['text'] ?? '',
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -121,6 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
+                      controller: messageTextController,
                       onChanged: (value) {
                         messageText = value;
                       },
@@ -129,6 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   TextButton(
                     onPressed: () {
+                      messageTextController.clear();
                        _firestore.collection('messages').add({
                          'text': messageText,
                          'sender': loggedInUser?.email,
