@@ -82,12 +82,32 @@ class _ChatScreenState extends State<ChatScreen> {
 
                 return Expanded(
                   child: ListView.builder(
+                    padding:  EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
                       final msg = messages[index].data() as Map<String, dynamic>;
-                      return ListTile(
-                        title: Text(msg['sender'] ?? 'Unknown Sender'),     // Sender name
-                        subtitle: Text(msg['text'] ?? ''),
+                      return  Expanded(
+                        child: Material(
+                          borderRadius:  BorderRadius.circular(12),
+                         // color: Colors.lightBlueAccent,
+
+                          child: ListTile(
+                            title: Text(msg['sender'] ?? 'Unknown Sender',
+                            style: const TextStyle(
+                              fontSize: 14,),),     // Sender name
+                            subtitle: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.lightBlueAccent,
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Text(msg['text'] ?? '',
+                                style: const TextStyle(color:  Colors.white,
+                                fontSize:  16,
+                                ),),
+                            ),
+                          ),
+                        ),
                       );
                     },
                   ),
