@@ -5,64 +5,64 @@ import 'package:section15/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+final _firestore = FirebaseFirestore.instance;
+User? loggedInUser;
 
 class ChatScreen extends StatefulWidget {
-  static String id = 'chat_screen';   //ad in screen navigation main.dart routes
+  static String id = 'chat_screen';
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
   final messageTextController = TextEditingController();
-
-  final _firestore = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
- late String  messageText;
-  User? loggedInUser; //was FirebaseUser depricaated V1 firebase
+  late String messageText;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     getCurrentUser();
   }
 
-
-  void getCurrentUser () async {
-    try{
-    final user = await _auth.currentUser;  // was final user = _auth.currentUser();
-    if (user != null) {
-      loggedInUser = user;
-      // you can safely use `user`
-      print(user.email);
-    }
+  void getCurrentUser() async {
+    try {
+      final user = _auth.currentUser;
+      if (user != null) {
+        loggedInUser = user;
+        print('Logged in: ${user.email}');
+      }
     } catch (e) {
       print(e);
     }
   }
 
   void messagesStream() async {
-  await for ( var snapshot  in _firestore.collection('messages').snapshots()) {
-    print('start stream listen');
-    for (var message in snapshot.docs){
-      print(message.data());  // had to modify this from course code  needed to call funtions () was  >   print(message.data);
-     }
-
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      print('start stream listen');
+      for (var message in snapshot.docs) {
+        print(message.data());
+      }
+    }
   }
 
-}
   @override
   Widget build(BuildContext context) {
+    final currentUser = loggedInUser?.email ?? 'unknown';
+
     return Scaffold(
       appBar: AppBar(
         leading: null,
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.close),
-              onPressed: () {
-                messagesStream();
-                //_auth.signOut();
-               // Navigator.pop(context);
-              }),
+            icon: Icon(Icons.close),
+            onPressed: () {
+              messagesStream();
+              // _auth.signOut();
+              // Navigator.pop(context);
+            },
+          ),
         ],
         title: Text('⚡️Chat'),
         backgroundColor: Colors.lightBlueAccent,
@@ -74,28 +74,37 @@ class _ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             StreamBuilder<QuerySnapshot>(
               stream: _firestore.collection('messages').snapshots(),
-              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (!snapshot.hasData) {
                   return Center(child: CircularProgressIndicator());
                 }
 
-                final messages = snapshot.data!.docs;
+                final messages = snapshot.data!.docs.reversed.toList();
 
                 return Expanded(
                   child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+                    reverse: true,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0, vertical: 20.0),
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
-                      final msg = messages[index].data() as Map<String, dynamic>;
+                      final msg =
+                      messages[index].data() as Map<String, dynamic>;
+                      final isMe = msg['sender'] == currentUser;
 
                       return Align(
-                        alignment: Alignment.centerRight, // 👈 Right-justify whole bubble
+                        alignment: isMe
+                            ? Alignment.centerLeft
+                            : Alignment.centerRight,
                         child: Container(
-                          margin: const EdgeInsets.symmetric(vertical: 6), // space between bubbles
+                          margin: const EdgeInsets.symmetric(vertical: 6),
                           child: Material(
                             color: Colors.transparent,
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end, // 👈 Right-align sender + message
+                              crossAxisAlignment: isMe
+                                  ? CrossAxisAlignment.start
+                                  : CrossAxisAlignment.end,
                               children: [
                                 Text(
                                   msg['sender'] ?? 'Unknown Sender',
@@ -106,15 +115,29 @@ class _ChatScreenState extends State<ChatScreen> {
                                 ),
                                 const SizedBox(height: 4),
                                 Material(
-                                  elevation: 6.0, // 👈 adds the shadow
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: Colors.lightBlue, // 👈 background color of bubble
+                                  elevation: 6.0,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: const Radius.circular(30),
+                                    bottomLeft: isMe
+                                        ? const Radius.circular(0)
+                                        : const Radius.circular(30),
+                                    bottomRight: isMe
+                                        ? const Radius.circular(30)
+                                        : const Radius.circular(0),
+                                    topRight: const Radius.circular(30),
+                                  ),
+                                  color: isMe
+                                      ? Colors.grey[400]
+                                      : Colors.lightBlue,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 12),
                                     child: Text(
                                       msg['text'] ?? '',
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                      style: TextStyle(
+                                        color: isMe
+                                            ? Colors.black87
+                                            : Colors.white,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -148,10 +171,10 @@ class _ChatScreenState extends State<ChatScreen> {
                   TextButton(
                     onPressed: () {
                       messageTextController.clear();
-                       _firestore.collection('messages').add({
-                         'text': messageText,
-                         'sender': loggedInUser?.email,
-                       });
+                      _firestore.collection('messages').add({
+                        'text': messageText,
+                        'sender': loggedInUser?.email ?? 'unknown',
+                      });
                     },
                     child: Text(
                       'Send',
